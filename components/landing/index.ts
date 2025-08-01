@@ -1,0 +1,9 @@
+export { Navigation } from "./Navigation";
+export { HeroSection } from "./HeroSection";
+export { HowItWorks } from "./HowItWorks";
+export { PainPoints } from "./PainPoints";
+export { EarlyAdopterBenefits } from "./EarlyAdopterBenefits";
+export { UseCases } from "./UseCases";
+export { WaitlistSection } from "./WaitlistSection";
+export { FAQ } from "./FAQ";
+export { Footer } from "./Footer";
