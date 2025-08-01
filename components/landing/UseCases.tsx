@@ -70,8 +70,8 @@ export function UseCases() {
             <CardContent className="pt-6">
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Users className="w-5 h-5 text-emerald-600" />
+                  <div className="w-8 h-8 bg-brand-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Users className="w-5 h-5 text-brand-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900">
@@ -85,8 +85,8 @@ export function UseCases() {
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Users className="w-5 h-5 text-emerald-600" />
+                  <div className="w-8 h-8 bg-brand-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Users className="w-5 h-5 text-brand-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900">
@@ -100,8 +100,8 @@ export function UseCases() {
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Users className="w-5 h-5 text-emerald-600" />
+                  <div className="w-8 h-8 bg-brand-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Users className="w-5 h-5 text-brand-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900">

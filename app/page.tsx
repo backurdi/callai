@@ -12,7 +12,7 @@ import {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-accent-50 to-brand-50">
       <Navigation />
       <HeroSection />
       <HowItWorks />
@@ -20,7 +20,7 @@ export default function LandingPage() {
       <EarlyAdopterBenefits />
       {/* <UseCases /> */}
       <WaitlistSection />
-      <FAQ />
+      {/* <FAQ /> */}
       <Footer />
     </div>
   );

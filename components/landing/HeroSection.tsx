@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -61,51 +62,60 @@ export function HeroSection() {
   // }, [generateRandomAnimations]);
 
   return (
-    <section className="py-48 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section className="py-24 sm:py-32 lg:py-48 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       {/* Floating Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Heart Icon - Top Left of Text */}
-        <div className="absolute top-[25%] left-[25%] animate-float-1">
-          <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-pink-200">
-            <Heart className="w-8 h-8 text-pink-500 fill-pink-500" />
+        <div className="absolute top-[15%] sm:top-[25%] left-[5%] sm:left-[25%] animate-float-1">
+          <div className="w-12 h-12 sm:w-16 lg:w-20 sm:h-16 lg:h-20 bg-pink-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-pink-200">
+            <Heart className="w-4 h-4 sm:w-6 lg:w-8 sm:h-6 lg:h-8 text-pink-500 fill-pink-500" />
           </div>
         </div>
 
         {/* Phone Icon - Top Center */}
-        <div className="absolute top-[10%] left-1/2 transform -translate-x-1/2 animate-float-2">
-          <div className="w-18 h-18 bg-emerald-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-emerald-200">
-            <Phone className="w-9 h-9 text-emerald-600" />
+        <div className="absolute top-[5%] sm:top-[10%] left-1/2 transform -translate-x-1/2 animate-float-2">
+          <div className="w-12 h-12 sm:w-14 lg:w-18 sm:h-14 lg:h-18 bg-brand-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-brand-200">
+            <Phone className="w-4 h-4 sm:w-6 lg:w-9 sm:h-6 lg:h-9 text-brand-600" />
           </div>
         </div>
 
-        {/* Happy People Placeholder - Left Side */}
-        <div className="absolute top-[40%] left-[20%] animate-float-3">
-          <div className="w-20 h-20 bg-blue-100 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm border border-blue-200">
-            <div className="text-center">
-              <Users className="w-10 h-10 text-blue-600 mx-auto mb-1" />
-              <div className="text-sm text-blue-600 font-semibold">Happy</div>
-            </div>
+        {/* Happy People Image - Left Side */}
+        <div className="absolute top-[50%] sm:top-[40%] left-[5%] sm:left-[20%] animate-float-3">
+          <div className="w-16 h-16 sm:w-20 lg:w-28 sm:h-20 lg:h-28 bg-blue-100 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-sm border border-blue-200 overflow-hidden">
+            <Image
+              src="/hero-person1.jpg"
+              alt="Happy customer"
+              width={112}
+              height={112}
+              className="w-full h-full object-cover rounded-xl"
+            />
           </div>
         </div>
 
-        {/* Star Rating - Top Right of Text */}
-        <div className="absolute top-[25%] right-[25%] animate-float-4">
-          <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-yellow-200">
-            <Star className="w-8 h-8 text-yellow-500 fill-yellow-500" />
+        {/* Happy People Image - Top Right of Text */}
+        <div className="absolute top-[15%] sm:top-[25%] right-[5%] sm:right-[25%] animate-float-4">
+          <div className="w-12 h-12 sm:w-16 lg:w-24 sm:h-16 lg:h-24 bg-yellow-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-yellow-200 overflow-hidden">
+            <Image
+              src="/hero-person2.jpg"
+              alt="Satisfied customer"
+              width={64}
+              height={64}
+              className="w-full h-full object-cover rounded-full"
+            />
           </div>
         </div>
 
         {/* Chat Bubble - Right Side */}
-        <div className="absolute top-[40%] right-[20%] animate-float-5">
-          <div className="w-17 h-17 bg-purple-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-purple-200">
-            <MessageCircle className="w-8 h-8 text-purple-600" />
+        <div className="absolute top-[75%] sm:top-[40%] right-[5%] sm:right-[20%] animate-float-5">
+          <div className="w-12 h-12 sm:w-14 lg:w-17 sm:h-14 lg:h-17 bg-purple-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-purple-200">
+            <MessageCircle className="w-4 h-4 sm:w-6 lg:w-8 sm:h-6 lg:h-8 text-purple-600" />
           </div>
         </div>
 
         {/* Lightning/Speed Icon - Right Side Lower */}
-        <div className="absolute top-[55%] right-[22%] animate-float-6">
-          <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-orange-200">
-            <Zap className="w-8 h-8 text-orange-500 fill-orange-500" />
+        <div className="absolute top-[85%] sm:top-[55%] right-[15%] sm:right-[22%] animate-float-6">
+          <div className="w-14 h-14 sm:w-18 lg:w-24 sm:h-18 lg:h-24 bg-orange-100 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-orange-200">
+            <Zap className="w-5 h-5 sm:w-6 lg:w-8 sm:h-6 lg:h-8 text-orange-500 fill-orange-500" />
           </div>
         </div>
       </div>
@@ -123,7 +133,7 @@ export function HeroSection() {
             }}
           >
             <div
-              className={`w-0.5 bg-emerald-500 animate-line-grow-${animation.id}`}
+              className={`w-0.5 bg-brand-500 animate-line-grow-${animation.id}`}
               style={
                 {
                   "--line-height": `${animation.lineHeight}px`,
@@ -138,7 +148,7 @@ export function HeroSection() {
                 className={`w-8 h-8 bg-slate-300 rounded-full flex items-center justify-center shadow-lg animate-circle-bg-${animation.id}`}
               >
                 <Phone
-                  className={`w-4 h-4 text-emerald-500 animate-phone-to-check-${animation.id}`}
+                  className={`w-4 h-4 text-brand-500 animate-phone-to-check-${animation.id}`}
                 />
                 <Check
                   className={`w-4 h-4 text-white absolute opacity-0 animate-check-appear-${animation.id}`}
@@ -152,36 +162,35 @@ export function HeroSection() {
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center space-y-8">
           <div className="space-y-4">
-            <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-100">
-              🚀 Coming Soon - Join the Waitlist
+            <Badge className="bg-brand-900 text-white hover:bg-brand-900">
+              🚀 Kommer snart - Tilmeld dig ventelisten
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-              One Phone Number. Infinite Customer Care.
+              Sørg for at dine kunder altid får hjælp.
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Simply add our phone number to your website. Our AI handles every
-              customer call with warmth, intelligence, and precision - so you
-              can focus on growing your business.
+              Giv dine kunder den rigtige hjælp mens du fokuserer på at vokse
+              din virksomhed.
             </p>
           </div>
 
           {/* Join Waitlist Form */}
           <div className="max-w-md mx-auto space-y-4">
             <h3 className="text-lg font-semibold text-slate-900">
-              Join the Waitlist
+              Tilmeld dig ventelisten
             </h3>
             <div className="flex flex-col sm:flex-row gap-3">
               <Input
                 type="email"
-                placeholder="Enter your email address"
+                placeholder="Indtast din email"
                 className="flex-1"
               />
-              <Button className="bg-emerald-600 hover:bg-emerald-700 whitespace-nowrap">
-                Join Waitlist
+              <Button className="bg-brand-900 hover:bg-brand-800 whitespace-nowrap">
+                Tilmeld dig ventelisten
               </Button>
             </div>
             <p className="text-sm text-slate-500">
-              Be the first to know when we launch. No spam, ever.
+              Vær den første til at høre om lanceringen. Ingen spam, nogensinde.
             </p>
           </div>
         </div>

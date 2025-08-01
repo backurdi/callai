@@ -5,10 +5,10 @@ export function Footer() {
   return (
     <footer className="bg-slate-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+        {/* <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center">
                 <Phone className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold">CallAI</span>
@@ -89,10 +89,10 @@ export function Footer() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-400">
-          <p>&copy; 2024 CallAI. All rights reserved.</p>
+          <p>&copy; 2025 CallAI. Alle rettigheder reserveret.</p>
         </div>
       </div>
     </footer>
