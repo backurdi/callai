@@ -1,7 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { ArrowRight } from "lucide-react";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 export function WaitlistSection() {
   return (
@@ -18,26 +16,14 @@ export function WaitlistSection() {
 
         <Card className="max-w-md mx-auto bg-white">
           <CardContent className="pt-6">
-            <form className="space-y-4">
-              <div>
-                <Input
-                  type="email"
-                  placeholder="Indtast din e-mailadresse"
-                  className="w-full"
-                />
-              </div>
-              <div>
-                <Input
-                  type="text"
-                  placeholder="Dit butiksnavn (valgfri)"
-                  className="w-full"
-                />
-              </div>
-              <Button className="w-full bg-brand-500 hover:bg-brand-600 text-lg py-3">
-                Tilmeld dig ventelisten
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </form>
+            <WaitlistForm
+              layout="full"
+              emailLabel="Indtast din e-mailadresse"
+              firstNameLabel="Fornavn"
+              lastNameLabel="Efternavn"
+              buttonText="Tilmeld dig ventelisten"
+              showNames={true}
+            />
             <p className="text-xs text-slate-500 mt-4">
               Vi sender aldrig spam. Afmeld til enhver tid.
             </p>
@@ -46,18 +32,33 @@ export function WaitlistSection() {
 
         <div className="mt-12 grid md:grid-cols-3 gap-8 text-accent-100">
           <div className="text-center">
-            <div className="text-2xl font-bold text-white">Tidlig adgang</div>
-            <div className="text-sm">Vær først til at prøve CallAI</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-white">Særlige priser</div>
-            <div className="text-sm">Eksklusive lanceringsrabatter</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-white">
-              Prioriteret support
+            <div className="w-16 h-16 bg-accent-200/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🚀</span>
             </div>
-            <div className="text-sm">Direkte linje til vores team</div>
+            <h3 className="text-lg font-semibold mb-2">Tidlig adgang</h3>
+            <p className="text-sm opacity-90">
+              Vær blandt de første til at teste CallAI og påvirk produktets
+              udvikling
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-accent-200/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">💰</span>
+            </div>
+            <h3 className="text-lg font-semibold mb-2">Særlige priser</h3>
+            <p className="text-sm opacity-90">
+              Eksklusiv rabat på alle vores plans når du tilmelder dig
+              ventelisten
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-accent-200/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🎯</span>
+            </div>
+            <h3 className="text-lg font-semibold mb-2">Prioriteret support</h3>
+            <p className="text-sm opacity-90">
+              Få dedikeret support og hjælp til at komme i gang med CallAI
+            </p>
           </div>
         </div>
       </div>

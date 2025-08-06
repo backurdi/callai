@@ -32,8 +32,12 @@ export function Navigation() {
             >
               Early Access
             </Link>
-            <Button size="sm" className="bg-brand-500 hover:bg-brand-700">
-              Join Waitlist
+            <Button
+              asChild
+              size="sm"
+              className="bg-brand-500 hover:bg-brand-700"
+            >
+              <Link href="#waitlist">Join Waitlist</Link>
             </Button>
           </div>
         </div>

@@ -28,6 +28,42 @@ interface AnimationData {
 }
 
 export function HeroSection() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setEmail("");
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   // const [animations, setAnimations] = useState<AnimationData[]>([]);
 
   // const generateRandomAnimations = useCallback(() => {
@@ -179,19 +215,49 @@ export function HeroSection() {
             <h3 className="text-lg font-semibold text-slate-900">
               Tilmeld dig ventelisten
             </h3>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Input
-                type="email"
-                placeholder="Indtast din email"
-                className="flex-1"
-              />
-              <Button className="bg-brand-900 hover:bg-brand-800 whitespace-nowrap">
-                Tilmeld dig ventelisten
-              </Button>
-            </div>
-            <p className="text-sm text-slate-500">
-              Vær den første til at høre om lanceringen. Ingen spam, nogensinde.
-            </p>
+            {submitStatus === "success" ? (
+              <div className="text-center space-y-2">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                  <Check className="w-6 h-6 text-green-600" />
+                </div>
+                <p className="text-green-600 font-medium">
+                  Tak! Du er nu tilmeldt ventelisten.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <Input
+                  type="email"
+                  placeholder="Indtast din email"
+                  className="flex-1"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isSubmitting}
+                  required
+                />
+                <Button
+                  type="submit"
+                  className="bg-brand-900 hover:bg-brand-800 whitespace-nowrap"
+                  disabled={isSubmitting || !email}
+                >
+                  {isSubmitting ? "Tilmelder..." : "Tilmeld dig ventelisten"}
+                </Button>
+              </form>
+            )}
+            {submitStatus === "error" && (
+              <p className="text-red-500 text-sm text-center">
+                Der opstod en fejl. Prøv venligst igen.
+              </p>
+            )}
+            {submitStatus !== "success" && (
+              <p className="text-sm text-slate-500">
+                Vær den første til at høre om lanceringen. Ingen spam,
+                nogensinde.
+              </p>
+            )}
           </div>
         </div>
       </div>
