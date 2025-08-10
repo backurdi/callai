@@ -17,7 +17,7 @@ export default function LandingPage() {
       <HeroSection />
       <HowItWorks />
       <PainPoints />
-      <EarlyAdopterBenefits />
+      {/* <EarlyAdopterBenefits /> */}
       {/* <UseCases /> */}
       <WaitlistSection />
       {/* <FAQ /> */}
